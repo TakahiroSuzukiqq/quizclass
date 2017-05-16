@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import Question from './QUestion'
+import Question from './Question';
+import ProgressBar from './ProgressBar';
 
 class App extends Component {
   constructor(props) {
      super(props);
      this.state = {
-       quetion: 0
+       progress: 0
      };
      this.quiz_data = [
        {
@@ -25,7 +26,8 @@ class App extends Component {
     return (
       <div>
           <h2>Quiz App</h2>
-          <Question current_question={this.quiz_data[this.state.progress].question}>
+          <Question current_question={this.quiz_data[this.state.progress].question} />
+          <ProgressBar current_step={this.state.progress+ 1} question_length={this.quiz_data.length} />
       </div>
     );
   }
