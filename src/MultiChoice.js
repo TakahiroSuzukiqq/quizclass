@@ -8,7 +8,7 @@ class MultiChoice extends Component {
         <br />
         <p>You have selected: {this.props.selectedAnswer}</p>
         // <button onClick={() => {console.log(this); this.props.handleSubmit()}}>Submit</button>
-        <button onClick={this.props.handleSubmit}>Submit</button>
+        <button onClick={this.props.handleSubmit}> Submit </button>
       </div>
     )
   }

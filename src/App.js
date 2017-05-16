@@ -63,7 +63,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2>Quiz App</h2>
+        <h2> Quiz App </h2>
         {this.state.progress < this.quiz_data.length ? (
           <div>
             <Question current_question={this.quiz_data[this.state.progress].question} />

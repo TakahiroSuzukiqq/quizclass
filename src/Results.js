@@ -6,7 +6,7 @@ class Results extends Component {
      <div>
       <h3>{this.props.end_message}</h3>
       <p>Your score was: {this.props.score}</p>
-      <button onClick={this.props.handleRestart}>Retry</button>
+      <button onClick={this.props.handleRestart}> Retry </button>
      </div>
    )
   }
