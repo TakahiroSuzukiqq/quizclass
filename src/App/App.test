@@ -1,0 +1,30 @@
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './App';
+import { shallow } from 'enzyme';
+
+it('renders without crashing', () => {
+  const div = document.createElement('div');
+  ReactDOM.render(<App />, div);
+});
+
+//yarn add enzyme --dev
+//yarn add react-test-renderer --dev
+it('restartQuiz() reset quiz state',() => {
+  let component = shallow(<App />);
+  component.instance().setState = jest.fn();
+
+  component.instance().state = {
+    progress: 2,
+    selected: 'Yowzer',
+    score: 4
+  };
+
+   component.instance().restartQuiz();
+
+   expect(component.instance().setState).toHaveBeenCalledWith({
+     progress: 0,
+     selected: 'Not yet!',
+     score: 0
+   });
+});
