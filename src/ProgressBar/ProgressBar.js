@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 
 class ProgressBar extends Component {
   render() {
@@ -7,6 +7,8 @@ class ProgressBar extends Component {
   }
 }
 
-
+ProgressBar.propTypes = {
+  progress: PropTypes.func.isRequired
+}
 
 export default ProgressBar;
