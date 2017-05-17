@@ -4,6 +4,7 @@ import Question from '../Question/Question';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import MultiChoice from '../MultiChoice/MultiChoice';
 import Results from '../Results/Results';
+import { Button } from 'react-bootstrap';
 
 class App extends Component {
   constructor(props) {
