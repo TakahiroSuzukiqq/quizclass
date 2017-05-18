@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap'
+import { Button, Panel, Nav, NavItem } from 'react-bootstrap'
 
 class Results extends Component {
   render() {
@@ -10,6 +10,11 @@ class Results extends Component {
       <p>Your score was: {this.props.score}</p>
       <Button bsStyle="success" onClick={this.props.handleRestart}> Retry </Button>
      </div>
+
+    //  {alert('Have fun!')}
+    //   <Nav bsStyle="pills" activeKey={1} onSelect={this.props.handleSubmit}>
+    //   <NavItem eventKey={1} href="/home">Submit</NavItem>
+    //   </Nav>
    )
   }
 }

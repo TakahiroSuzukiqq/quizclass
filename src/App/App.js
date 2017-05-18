@@ -4,7 +4,8 @@ import Question from '../Question/Question';
 import ProgressBar from '../ProgressBar/ProgressBar';
 import MultiChoice from '../MultiChoice/MultiChoice';
 import Results from '../Results/Results';
-import { Button } from 'react-bootstrap';
+import { Line } from 'rc-progress';
+
 
 class App extends Component {
   constructor(props) {
@@ -27,6 +28,16 @@ class App extends Component {
         question: 'Who is the best coding YouTuber?',
         correct_answer: 'FunFunFunction',
         possible_answers: ['Coding Train', 'FunFunFunction', 'Young Lamb', 'Wes Bos']
+      },
+      {
+        question: 'How to get rich?',
+        correct_answer: 'Marry rich guy',
+        possible_answers: ['Work hard', 'Buy lottery', 'Mystery', 'Marry rich guy']
+      },
+      {
+        question: 'What time is it now?',
+        correct_answer: '3',
+        possible_answers: ['1', '2', '3', '4']
       }
     ]
   }
@@ -70,6 +81,9 @@ class App extends Component {
           <div>
             <Question current_question={this.quiz_data[this.state.progress].question} />
             <ProgressBar current_step={this.state.progress + 1} question_length={this.quiz_data.length} />
+            <Line percent={(this.state.progress + 1) / (this.quiz_data.length)*100} strokeWidth="2" strokeColor="#D3D3D3"  />
+            <Line percent={(this.state.progress) / (this.quiz_data.length)*100} strokeWidth="2" strokeColor="#D3D3D3"  />
+
             <MultiChoice
               answers={this.quiz_data[this.state.progress].possible_answers}
               updateSelected={this.updateSelected}

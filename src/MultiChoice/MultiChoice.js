@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-bootstrap';
+import { Button, Panel, Nav, NavItem } from 'react-bootstrap';
 
 class MultiChoice extends Component {
   render() {
@@ -10,7 +10,10 @@ class MultiChoice extends Component {
         <br />
         <p>You have selected: {this.props.selectedAnswer}</p>
         {/*<button onClick={() => {console.log(this); this.props.handleSubmit()}}>Submit</button>*/}
+
         <Button bsStyle="info" onClick={this.props.handleSubmit}> Submit </Button>
+          {/*{alert('Your answer has sent properly')}*/}
+
       </div>
     )
   }
